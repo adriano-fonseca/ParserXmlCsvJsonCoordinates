@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataFile>
+   <dataRecord id="2">
+      <vehicle>Truck B</vehicle>
+      <lat>35.14999999999999857891452847979962825775146484375</lat>
+      <lon>-45.14999999999999857891452847979962825775146484375</lon>
+      <date>1986-07-23T18:20:15.641-03:00</date>
+   </dataRecord>
+   <dataRecord id="1">
+      <vehicle>Truck A</vehicle>
+      <lat>30.14999999999999857891452847979962825775146484375</lat>
+      <lon>-55.14999999999999857891452847979962825775146484375</lon>
+      <date>2016-03-31T18:20:15.641-03:00</date>
+   </dataRecord>
+   <dataRecord id="3">
+      <vehicle>Truck C</vehicle>
+      <lat>35.14999999999999857891452847979962825775146484375</lat>
+      <lon>-45.14999999999999857891452847979962825775146484375</lon>
+   </dataRecord>
+</dataFile>
