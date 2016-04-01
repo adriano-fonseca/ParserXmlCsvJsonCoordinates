@@ -1,5 +1,6 @@
 package org.company.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -10,21 +11,32 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.jsefa.csv.annotation.CsvDataType;
+import org.jsefa.csv.annotation.CsvField;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "record")
-public class DataRecordDTO {
+@CsvDataType
+public class DataRecordDTO implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   @XmlAttribute
+  @CsvField(pos = 1)
   private Long       id;
 
+  @CsvField(pos = 2)
   private String     vehicle;
 
   @XmlElement(name = "lat")
+  @CsvField(pos = 3)
   private BigDecimal latitude;
 
   @XmlElement(name = "lon")
+  @CsvField(pos = 4)
   private BigDecimal longitude;
 
+  @CsvField(pos = 5)
   private Calendar   date;
 
   public DataRecordDTO() {

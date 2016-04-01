@@ -20,5 +20,6 @@ public class UtilDateTest {
     dateCalendarExpected.set(1986, 6, 23);
     DateFormat df=DateFormat.getDateInstance(DateFormat.MEDIUM);
     Assert.assertEquals(df.format(dateCalendarExpected.getTime()),df.format(dateCalendar.getTime()));
+    System.out.println(df.format(dateCalendar.getTime()));
   }
 }
