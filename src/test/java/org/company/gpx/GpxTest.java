@@ -5,7 +5,6 @@ import java.util.Calendar;
 
 import org.apache.commons.lang.time.DateUtils;
 import org.company.dao.FileDAO;
-import org.company.dao.XMLFileDAO;
 import org.company.dto.gpx.GpxDTO;
 import org.company.util.UtilEnums;
 import org.junit.Assert;
@@ -15,33 +14,33 @@ public class GpxTest {
   
   @Test
   public void shouldFailNotTwoTrk() {
-    GpxDTO gpx = XMLFileDAO.readXML("./xml/data.gpx", new GpxDTO());
+    GpxDTO gpx = FileDAO.readFile("./xml/data.gpx", new GpxDTO(),UtilEnums.FileType.XML);
     Assert.assertEquals(2, gpx.getTrk().size());
   }
   
   @Test
   public void shouldFailIfNotOneTrkSeg() {
-    GpxDTO gpx = XMLFileDAO.readXML("./xml/data.gpx", new GpxDTO());
+    GpxDTO gpx = FileDAO.readFile("./xml/data.gpx", new GpxDTO(), UtilEnums.FileType.XML);
     Assert.assertEquals(1, gpx.getTrk().get(0).getTrackSegmentList().size());
   }
   
   @Test
   public void shouldFailIfNotSevenTrkPoint() {
-    GpxDTO gpx = XMLFileDAO.readXML("./xml/data.gpx", new GpxDTO());
+    GpxDTO gpx = FileDAO.readFile("./xml/data.gpx", new GpxDTO(),UtilEnums.FileType.XML);
     Assert.assertEquals(7, gpx.getTrk().get(0).getTrackSegmentList().get(0).getTrackPointList().size());
     System.out.println(gpx.getTrk().get(0).getTrackSegmentList().get(0).getTrackPointList().get(0).toString());
   }
   
   @Test
   public void shouldFailIfThereIsNotTwoTrkPoint() {
-    GpxDTO gpx = XMLFileDAO.readXML("./xml/data.gpx", new GpxDTO());
+    GpxDTO gpx = FileDAO.readFile("./xml/data.gpx", new GpxDTO(),UtilEnums.FileType.XML);
     Assert.assertEquals(7, gpx.getTrk().get(0).getTrackSegmentList().get(0).getTrackPointList().size());
     System.out.println(gpx.getTrk().get(0).getTrackSegmentList().get(0).getTrackPointList().get(0).toString());
   }
   
   @Test
   public void searchPositionByDate(){
-    GpxDTO gpx = XMLFileDAO.readXML("./xml/data.gpx", new GpxDTO());
+    GpxDTO gpx = FileDAO.readFile("./xml/data.gpx", new GpxDTO(), UtilEnums.FileType.XML);
     Calendar date1 = gpx.getTrk().get(0).getTrackSegmentList().get(0).getTrackPointList().get(0).getTime();
     Calendar date2 = gpx.getTrk().get(1).getTrackSegmentList().get(0).getTrackPointList().get(0).getTime();
 //    DateFormat df=DateFormat.getDateTimeInstance();    

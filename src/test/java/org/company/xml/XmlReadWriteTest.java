@@ -1,12 +1,9 @@
 package org.company.xml;
 
 import java.math.BigDecimal;
-import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 import org.company.dao.FileDAO;
-import org.company.dao.XMLFileDAO;
 import org.company.dto.DataFileDTO;
 import org.company.dto.DataRecordDTO;
 import org.company.util.UtilEnums;
