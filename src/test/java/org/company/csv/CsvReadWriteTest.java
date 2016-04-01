@@ -6,13 +6,12 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.company.dao.CsvDAO;
-import org.company.dto.DataFileDTO;
 import org.company.dto.DataRecordDTO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CSVReadWriteTest {
+public class CsvReadWriteTest {
 
   private static List<DataRecordDTO> lista;
 
@@ -29,7 +28,7 @@ public class CSVReadWriteTest {
   }
 
   @Test
-  public void writeReadTest2() {
+  public void writeReadTest() {
     CsvDAO.writeToCSV(lista, "id,truck,lat,long,date", "./csv/new.csv");
     List<DataRecordDTO> lista = CsvDAO.readToCSV(new DataRecordDTO(), "./csv/new.csv");
     Assert.assertEquals(3, lista.size());
